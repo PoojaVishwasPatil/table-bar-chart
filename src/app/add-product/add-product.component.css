@@ -1,0 +1,17 @@
+.dialog-container{
+    padding: 18px;
+}
+form {
+    display: block;
+}
+
+.mat-mdc-form-field {
+    width: 100%;
+    margin-bottom: 15px; /* Add spacing between fields */
+}
+
+.edt-btn{
+    font-size: 15px;
+    padding: 5px 20px 5px 20px;
+    margin: 5px
+}

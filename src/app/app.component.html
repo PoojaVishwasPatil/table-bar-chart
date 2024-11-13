@@ -1,0 +1,49 @@
+<div>
+  <h1>Ngx Bar Chart</h1>
+
+  <div style="height: 200px;">
+    <ngx-charts-bar-vertical
+      [results]="barChartData"
+      [scheme]="colorScheme"
+      [gradient]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showDataLabel]="true"
+      [roundEdges]="true"
+      [barPadding]="8">
+    </ngx-charts-bar-vertical>
+  </div>
+
+  <h1>PrimeNg Table</h1>
+  <p-toolbar>
+    <ng-template pTemplate="left">
+      <button pButton type="button" class="edt-btn" label="New" (click)="onAdd()">Add</button>
+    </ng-template>
+
+    <div style="margin-right: auto;">
+      <input type="text" pInputText placeholder="Search..." [(ngModel)]="searchTerm" (input)="onSearch()" />
+    </div>
+  </p-toolbar>
+  <p-table [value]="filteredProducts">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="table-head">Name</th>
+        <th class="table-head">Price</th>
+        <th class="table-head">Category</th>
+        <th class="table-head">Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product class="table-body">
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          <button pButton type="button" class="edt-btn" label="Edit" (click)="onEdit(product)">Update</button>
+          <button pButton type="button" class="edt-btn" label="Delete" (click)="onDelete(product)">Delete</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  
+</div>
